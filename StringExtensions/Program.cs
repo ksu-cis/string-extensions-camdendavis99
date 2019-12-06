@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ExtensionMethods;
 
 namespace StringExtensions
 {
@@ -9,8 +10,8 @@ namespace StringExtensions
         {
             List<string> writings = new List<string>()
             {
-                "Foo",
-                "Bar",
+                "foo",
+                "bar",
                 "A River Runs through It",
                 "The Five-Year Itch",
                 "The Bridges of Madison County",
@@ -22,9 +23,13 @@ namespace StringExtensions
             Console.WriteLine("Fun with string extensions!");
             Console.WriteLine("---------------------------");
 
-            foreach(string s in writings)
+            foreach (string s in writings)
             {
+                s.Decapitalize(); // won't work
                 Console.WriteLine(s);
+                Console.WriteLine($"Word Count {s.WordCount()}");
+                Console.WriteLine($"Capitalized: {s.Capitalize()}");
+                Console.WriteLine($"Titlized: {s.Titleize()}");
                 Console.WriteLine("---------------------------");
             }
             
